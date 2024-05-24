@@ -25,10 +25,6 @@ import org.springframework.batch.item.file.mapping.JsonLineMapper;
 import org.springframework.batch.item.json.JacksonJsonObjectReader;
 import org.springframework.batch.item.json.JsonItemReader;
 import org.springframework.batch.item.json.builder.JsonItemReaderBuilder;
-import org.springframework.cloud.gcp.autoconfigure.storage.GcpStorageAutoConfiguration;
-import org.springframework.cloud.gcp.core.GcpScope;
-import org.springframework.cloud.gcp.core.UserAgentHeaderProvider;
-import org.springframework.cloud.gcp.storage.GoogleStorageResource;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
@@ -48,6 +44,10 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.spring.autoconfigure.storage.GcpStorageAutoConfiguration;
+import com.google.cloud.spring.core.GcpScope;
+import com.google.cloud.spring.core.UserAgentHeaderProvider;
+import com.google.cloud.spring.storage.GoogleStorageResource;
 import com.redis.riot.file.resource.FilenameInputStreamResource;
 import com.redis.riot.file.resource.OutputStreamResource;
 import com.redis.riot.file.resource.UncustomizedUrlResource;
@@ -68,7 +68,7 @@ public abstract class FileUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filename Filename that might include a glob pattern
 	 * @return List of file
 	 * @throws IOException

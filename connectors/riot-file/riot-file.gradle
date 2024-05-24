@@ -23,7 +23,7 @@ dependencies {
     // Forcing update to latest v1 SDK
     implementation platform('com.amazonaws:aws-java-sdk-bom:1.12.729')
     implementation 'com.amazonaws:aws-java-sdk-s3'
-    implementation(group: 'org.springframework.cloud', name: 'spring-cloud-gcp-starter-storage', version: gcpVersion) {
+    implementation(group: 'com.google.cloud', name: 'spring-cloud-gcp-starter-storage', version: gcpVersion) {
         exclude group: 'javax.annotation', module: 'javax.annotation-api'
     }
     testImplementation group: 'com.redis', name: 'spring-batch-redis-test', version: springBatchRedisVersion
