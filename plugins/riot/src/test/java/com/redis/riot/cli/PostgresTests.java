@@ -25,8 +25,8 @@ import com.redis.spring.batch.gen.Item.Type;
 
 class PostgresTests extends AbstractDbTests {
 
-	private static final DockerImageName postgresImage = DockerImageName.parse(PostgreSQLContainer.IMAGE)
-			.withTag(PostgreSQLContainer.DEFAULT_TAG);
+	private static final DockerImageName postgresImage = DockerImageName.parse("public.ecr.aws/docker/library/postgres:12")
+			.asCompatibleSubstituteFor("postgres");
 	private static final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(postgresImage);
 
 	@Override
