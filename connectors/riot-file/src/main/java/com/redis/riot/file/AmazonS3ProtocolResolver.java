@@ -1,6 +1,6 @@
 package com.redis.riot.file;
 
-import org.springframework.cloud.aws.core.io.s3.SimpleStorageProtocolResolver;
+import io.awspring.cloud.core.io.s3.SimpleStorageProtocolResolver;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;

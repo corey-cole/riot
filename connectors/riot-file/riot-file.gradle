@@ -18,8 +18,11 @@
 dependencies {
     implementation project(':riot-core')
     implementation 'org.springframework:spring-oxm'
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-aws-context', version: awsVersion
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-aws-autoconfigure', version: awsVersion
+    implementation group: 'io.awspring.cloud', name: 'spring-cloud-aws-context', version: awsVersion
+    implementation group: 'io.awspring.cloud', name: 'spring-cloud-aws-autoconfigure', version: awsVersion
+    // Forcing update to latest v1 SDK
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.12.729')
+    implementation 'com.amazonaws:aws-java-sdk-s3'
     implementation(group: 'org.springframework.cloud', name: 'spring-cloud-gcp-starter-storage', version: gcpVersion) {
         exclude group: 'javax.annotation', module: 'javax.annotation-api'
     }
